@@ -11,8 +11,8 @@ st.set_page_config(page_title="Gojek Sentiment Dashboard")
 @st.cache_resource
 def load_lstm_and_tokenizer():
     try:
-        lstm_model = load_model("streamlit_models/lstm_model.h5")
-        with open("streamlit_models/tokenizer.pickle", "rb") as f:
+        lstm_model = load_model("lstm_model.h5")
+        with open("tokenizer.pickle", "rb") as f:
             tokenizer = pickle.load(f)
         return lstm_model, tokenizer
     except Exception as e:
@@ -22,8 +22,8 @@ def load_lstm_and_tokenizer():
 @st.cache_resource
 def load_logreg_and_tfidf():
     try:
-        tfidf = joblib.load("streamlit_models/tfidf_vectorizer.joblib")
-        logreg = joblib.load("streamlit_models/logistic_regression_model.joblib")
+        tfidf = joblib.load("tfidf_vectorizer.joblib")
+        logreg = joblib.load("logistic_regression_model.joblib")
         return tfidf, logreg
     except Exception as e:
         st.warning(f"Gagal load TF-IDF / Logistic Regression: {e}")
