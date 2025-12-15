@@ -12,7 +12,7 @@ st.set_page_config(page_title="Gojek Sentiment Dashboard")
 def load_lstm_and_tokenizer():
     try:
         lstm_model = load_model("lstm_model.h5")
-        with open("tokenizer.pickle", "wb") as f:
+        with open("tokenizer.pickle", "rb") as f:
             tokenizer = pickle.load(f)
         return lstm_model, tokenizer
     except Exception as e:
