@@ -55,7 +55,7 @@ st.markdown("Masukkan komentar pengguna, sistem akan memprediksi apakah sentimen
 
 model_choice = st.radio(
     "",
-    ( "Logistic Regression TF-IDF"),
+    ( ""),
 )
 
 user_input = st.text_area(
