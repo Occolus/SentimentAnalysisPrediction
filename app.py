@@ -9,15 +9,6 @@ st.set_page_config(page_title="Gojek Sentiment Dashboard")
 
 # ========= LOAD MODEL & PREPROCESSOR =========
 @st.cache_resource
-def load_lstm_and_tokenizer():
-    try:
-        lstm_model = load_model("lstm_model.keras")
-        with open("tokenizer.pickle", "rb") as f:
-            tokenizer = pickle.load(f)
-        return lstm_model, tokenizer
-    except Exception as e:
-        st.warning(f"Gagal load LSTM model/tokenizer: {e}")
-        return None, None
 
 @st.cache_resource
 def load_logreg_and_tfidf():
@@ -65,7 +56,7 @@ st.markdown("Masukkan komentar pengguna, sistem akan memprediksi apakah sentimen
 
 model_choice = st.radio(
     "Pilih model untuk prediksi:",
-    ("LSTM (Deep Learning)", "Logistic Regression (TF-IDF)"),
+    ( "Logistic Regression (TF-IDF)"),
 )
 
 user_input = st.text_area(
