@@ -20,7 +20,6 @@ def load_logreg_and_tfidf():
         st.warning(f"Gagal load TF-IDF / Logistic Regression: {e}")
         return None, None
 
-lstm_model, tokenizer = load_lstm_and_tokenizer()
 tfidf_vectorizer, logreg_model = load_logreg_and_tfidf()
 
 MAX_LEN = 100  # samakan dengan yang dipakai saat training LSTM
