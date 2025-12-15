@@ -54,7 +54,7 @@ st.title("Dashboard Analisis Sentimen Review Gojek")
 st.markdown("Masukkan komentar pengguna, sistem akan memprediksi apakah sentimennya **positif** atau **negatif**.")
 
 model_choice = st.radio(
-    "Pilih model untuk prediksi:",
+    "",
     ( "Logistic Regression TF-IDF"),
 )
 
